@@ -25,14 +25,14 @@
 
             {{-- Container realacional  --}}
             <aside>
-                <h1 class="text-2xl font-bold text-gray-600 mb-4">Más em {{$post->category->name}}</h1>
+                <h1 class="text-2xl font-bold text-gray-600 mb-4">Mais sobre: {{$post->category->name}}</h1>
             
                 <ul>
                     @foreach ($similares as $similar)
                         <li class="mb-4">
                             <a class="flex" href="{{route('posts.show', $similar)}}">
                                 @if ($similar->image)
-                                <img class="w-36 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="{{$similar->name}}">                               
+                                <img class="max-h-32 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="{{$similar->name}}">                               
                                 @else
                                 <img class="w-36 h-20 object-cover object-center" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" alt="">
                                     

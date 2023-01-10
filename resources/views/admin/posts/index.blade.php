@@ -9,7 +9,15 @@
 @stop
 
 @section('content')
+
+@if (session('info'))
+<div class="alert alert-success">
+    <strong>{{session('info')}}</strong>
+</div>
+@endif
+
    @livewire('admin.posts-index')
+   
 @stop
 
 @section('css')

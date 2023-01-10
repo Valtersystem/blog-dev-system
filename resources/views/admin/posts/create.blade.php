@@ -11,9 +11,7 @@
         <div class="card-body">
             {!! Form::open(['route' => 'admin.posts.store', 'autocomplite' => 'off', 'files' => true]) !!}
 
-            {!! Form::hidden('user_id', auth()->user()->id) !!}
-
-           @include('admin.posts.partials.form');
+           @include('admin.posts.partials.form')
 
             {!! Form::submit('Criar post', ['class' => 'btn btn-primary']) !!}
 

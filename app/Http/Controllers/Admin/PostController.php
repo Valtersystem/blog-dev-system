@@ -70,7 +70,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
-    {
+    {   
+        $this->authorize('published', $post);
+        
         return view('admin.posts.show', compact('post'));
     }
 
@@ -82,6 +84,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $this->authorize('author', $post);
+
         $categories = Category::pluck('name', 'id');
         $tags = Tag::all();
 
@@ -97,6 +101,8 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+        $this->authorize('author', $post);
+
         $post->update($request->all());
 
         if ($request->file('file')) {
@@ -115,10 +121,14 @@ class PostController extends Controller
                     'url' => $url
                 ]);
             }
-
-            return redirect()->route('admin.posts.edit', $post)->with('info', 
-             'Post updated');
         }
+
+        if($request->tags){
+            $post->tags()->sync($request->tags);
+        }
+
+        return redirect()->route('admin.posts.edit', $post)->with('info', 
+        'Post updated');
     }
 
     /**
@@ -129,6 +139,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $this->authorize('author', $post);
+
+        $post->delete();
+
+        return redirect()->route('admin.posts.index')->with('info','Post deleted');
     }
 }

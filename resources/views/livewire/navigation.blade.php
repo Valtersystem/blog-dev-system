@@ -1,4 +1,4 @@
-<nav class="bg-gray-800" x-data='{ open:false }'>
+<nav class="bg-gradient-to-r from-violet-900 via-black to-green-900" x-data='{ open:false }'>
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         
@@ -33,8 +33,8 @@
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           {{-- Logo --}}
           <a href="/" class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-            <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <img class="block h-8 w-auto lg:hidden" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673314112/logo.png" alt="Logo dev_system">
+            <img class="hidden h-8 w-auto lg:block" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673314112/logo.png" alt="Logo dev_system">
           </a>
           {{-- End Logo  --}}
           <div class="hidden sm:ml-6 sm:block">
@@ -42,7 +42,7 @@
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               @foreach ($categories as $category)
-              <a href="{{route('posts.category', $category)}}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>                 
+              <a href="{{route('posts.category', $category)}}}" class=" text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>                 
               @endforeach
             </div>
             {{-- End Navigation links --}}
