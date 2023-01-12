@@ -28,10 +28,10 @@ class TagController extends Controller
     public function create()
     {   
         $colors = [
+            'blue' => 'Blue',
             'red' => 'Red',
             'yellow' => 'Yellow',
             'green' => 'Green',
-            'blue' => 'Blue',
             'indigo' => 'Indigo',
             'purple' => 'Purple',
             'pink' => 'Pink'
