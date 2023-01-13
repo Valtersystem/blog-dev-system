@@ -12,7 +12,7 @@
             <div class="lg:col-span-2">
                 <figure>
                     @if ($post->image)
-                    <img class="w-full h-80 object-cover object-center rounded-2xl" src="{{Storage::url($post->image->url)}}" alt="">
+                    <img class="w-full h-80 object-cover object-center rounded-2xl" src="{{$post->image->url}}" alt="">
                     @else
                     <img class="w-full h-80 object-cover object-center rounded-2xl" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" alt="">
                     @endif
@@ -32,7 +32,7 @@
                         <li class="mb-4">
                             <a class="flex items-center" href="{{route('posts.show', $similar)}}">
                                 @if ($similar->image)
-                                <img class=" max-w-[8rem] h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="{{$similar->name}}">                               
+                                <img class=" max-w-[8rem] h-20 object-cover object-center" src="{{$similar->image->url}}" alt="{{$similar->name}}">                               
                                 @else
                                 <img class="max-w-[8rem] w-36 h-20 object-cover object-center" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" alt="">
                                     

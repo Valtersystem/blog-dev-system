@@ -7,7 +7,7 @@
         {{-- vou usar um if para encontrar a primeira interação do laço
         e alterar o tamanho da div --}}
 
-        <article class="w-full h-80 bg-cover bg-center rounded-xl @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}}@else https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg @endif)">
+        <article class="w-full h-80 bg-cover bg-center rounded-xl @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{$post->image->url}}@else https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg @endif)">
             <div class="w-full h-full px-8 flex flex-col justify-center">
                 {{-- Estou fazendo um foreach dentro da tabela tags que esta relacionada com os posts  --}}
                 <div>

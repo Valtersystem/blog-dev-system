@@ -51,7 +51,9 @@ class PostController extends Controller
         $post = Post::create($request->all());
         
         if ($request->file('file')){
-           $url = Storage::put('/public/posts', $request->file('file'));
+            $file = $request->file('file');
+            $obj = Cloudinary::upload($file->getRealPath(),['folder' => 'posts']);
+            $url =  $obj->getSecurePath();
 
            $post->image()->create([
                 'url' => $url
@@ -107,11 +109,14 @@ class PostController extends Controller
         $post->update($request->all());
 
         if ($request->file('file')) {
-            $url = Storage::put('/public/posts', $request->file('file'));
+
+            $file = $request->file('file');
+            $obj = Cloudinary::upload($file->getRealPath(),['folder' => 'posts']);
+            $url =  $obj->getSecurePath();
 
             if($post->image){
                 // delete the image
-                Storage::delete($post->image->url);
+                Cloudinary::destroy($post->image->url);
                 // update the image url
                 $post->image->update([
                     'url' => $url
@@ -143,6 +148,7 @@ class PostController extends Controller
         $this->authorize('author', $post);
 
         $post->delete();
+        
 
         return redirect()->route('admin.posts.index')->with('info','Post deleted');
     }
