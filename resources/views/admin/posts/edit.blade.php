@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dev Valtinho')
+@section('title', 'Dev System')
 
 @section('content_header')
     <h1>Editar Post</h1>

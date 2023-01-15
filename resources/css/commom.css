@@ -14,3 +14,32 @@
         @apply px-8;
     }
 }
+
+/* COLORS TAGS */
+.blue{
+    background: rgba(0, 0, 255, 0.266);
+}
+.red{
+    background: rgba(255, 0, 0, 0.278);
+}
+.yellow{
+    background: rgba(255, 255, 0, 0.515);
+}
+.green{
+    background: rgba(255, 0, 0, 0.3);
+}
+.indigo{
+    background: rgba(76, 0, 130, 0.257);
+}
+.purple{
+    background: rgba(128, 0, 128, 0.316);
+}
+.pink{
+    background: rgba(255, 192, 203, 0.255);
+}
+.orange{
+    background: rgba(255, 166, 0, 0.229);
+}
+.sienna{
+    background: rgba(160, 81, 45, 0.386);
+}

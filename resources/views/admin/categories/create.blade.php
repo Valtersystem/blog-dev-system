@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dev Blog')
+@section('title', 'Dev System')
 
 @section('content_header')
     <h1>Criar nova categoria</h1>

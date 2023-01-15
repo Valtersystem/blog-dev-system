@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Blog dev</b>_Valtinho',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Blog Dev</b>System',
+    'logo_img' => 'vendor/adminlte/dist/img/devsystem.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/devsystem.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/devsystem.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -255,8 +255,8 @@ return [
     'use_route_url' => false,
     'dashboard_url' => '/',
     'logout_url' => 'logout',
-    'login_url' => 'login',
-    'register_url' => 'register',
+    'login_url' => false,
+    'register_url' => false,
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -292,13 +292,13 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
             'text'         => 'search',
+            'search'         => true,
             'topnav_right' => true,
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
@@ -315,8 +315,12 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
-            // 'label'       => 4,
-            // 'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
+
         ],
         ['header' => 'ADIMINISTRADOR'],
         [

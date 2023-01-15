@@ -30,11 +30,11 @@
         </div>
         <!-- End Mobile menu button-->
 
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
           {{-- Logo --}}
           <a href="/" class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-auto lg:hidden" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673314112/logo.png" alt="Logo dev_system">
-            <img class="hidden h-8 w-auto lg:block" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673314112/logo.png" alt="Logo dev_system">
+            <img class="block h-8 w-auto lg:hidden" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673693413/logo3_fblyzl.png" alt="Logo dev_system">
+            <img class="hidden h-8 w-auto lg:block" src="https://res.cloudinary.com/dopi49cmo/image/upload/v1673693413/logo3_fblyzl.png" alt="Logo dev_system">
           </a>
           {{-- End Logo  --}}
           <div class="hidden sm:ml-6 sm:block">
@@ -42,7 +42,7 @@
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               @foreach ($categories as $category)
-              <a href="{{route('posts.category', $category)}}}" class=" text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>                 
+              <a href="{{route('posts.category', $category)}}" class=" text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>                 
               @endforeach
             </div>
             {{-- End Navigation links --}}
@@ -87,9 +87,9 @@
             </div>
           </div>
           @else
-          <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+          {{-- <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a> --}}
 
-          <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
+          {{-- <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a> --}}
         @endauth
 
       </div>

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dev Valtinho | Criar tags')
+@section('title', 'Dev System | Criar tags')
 
 @section('content_header')
     <h1>Criar tags</h1>

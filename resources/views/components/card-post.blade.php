@@ -1,14 +1,20 @@
 @props(['post'])
 <article class="mb-8 bg-white shadow-lg rounded-lg overflow-hidden">
 
-    @if ($post->image)
-    <img class="w-full h-72 object-cover object-center" src="{{$post->image->url}}" alt="{{$post->name}}">    
-    @else
-    <img class="w-full h-72 object-cover object-center" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" alt="img defaut">        
-    @endif
+   <div class="w-full h-80 bg-cover bg-center rounded-xl" style="background-image: url(@if($post->image) {{$post->image->url}}@else https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg @endif)">
+
+    <div class="w-full h-full px-8 flex flex-col justify-center hidden md:flex lg:flex">
+        <h1 class="text-4xl text-white leading-8 font-bold mt-2">
+            <a href="{{route('posts.show', $post)}}">
+                {{$post->name}}
+            </a>
+        </h1>
+    </div>
+
+    </div>
 
     <div class="px-6 py-4">
-        <h1 class="font-bold text-xl mb-2">
+        <h1 class="font-bold text-xl mb-2 text-black md:hidden lg:hidden">
             <a href="{{route('posts.show', $post)}}">
                 {{$post->name}}
             </a>

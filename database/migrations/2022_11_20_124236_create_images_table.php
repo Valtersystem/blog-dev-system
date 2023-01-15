@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('url');
+            $table->string('urlId');
 
             $table->unsignedBigInteger('imageable_id');
             $table->string('imageable_type');

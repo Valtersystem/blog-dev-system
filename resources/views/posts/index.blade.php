@@ -12,7 +12,7 @@
                 {{-- Estou fazendo um foreach dentro da tabela tags que esta relacionada com os posts  --}}
                 <div>
                     @foreach ($post->tags as $tag)
-                        <a href="{{route('posts.tag', $tag)}}" class="inline-block px-3 h-6 bg-{{$tag->color}}-600 text-white rounded-full ">{{$tag->name}}</a>
+                        <a href="{{route('posts.tag', $tag)}}" class="inline-block px-3 h-6 {{$tag->color}}  text-white rounded-full ">{{$tag->name}}</a>
                     @endforeach                   
                 </div>
 

@@ -10,8 +10,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-
-
+use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
 {
@@ -54,15 +53,19 @@ class PostController extends Controller
             $file = $request->file('file');
             $obj = Cloudinary::upload($file->getRealPath(),['folder' => 'posts']);
             $url =  $obj->getSecurePath();
+            $urlId = $obj->getPublicId();
 
            $post->image()->create([
-                'url' => $url
+                'url' => $url,
+                'urlId' => $urlId
            ]);
         }
 
         if($request->tags){
             $post->tags()->attach($request->tags);
         }
+
+        Cache::flush();
 
        return redirect()->route('admin.posts.edit', $post);
     }
@@ -110,16 +113,20 @@ class PostController extends Controller
 
         if ($request->file('file')) {
 
+            $urlOld = $post->image->urlId;
+        
             $file = $request->file('file');
             $obj = Cloudinary::upload($file->getRealPath(),['folder' => 'posts']);
             $url =  $obj->getSecurePath();
+            $urlId =  $obj->getPublicId();
 
-            if($post->image){
+            if($post->image->url){
                 // delete the image
-                Cloudinary::destroy($post->image->url);
+                Cloudinary::destroy($urlOld);
                 // update the image url
                 $post->image->update([
-                    'url' => $url
+                    'url' => $url,
+                    'urlId' => $urlId
                 ]);
             }else{
                 // create the new image
@@ -133,6 +140,8 @@ class PostController extends Controller
             $post->tags()->sync($request->tags);
         }
 
+        Cache::flush();
+        
         return redirect()->route('admin.posts.edit', $post)->with('info', 
         'Post updated');
     }
@@ -149,7 +158,7 @@ class PostController extends Controller
 
         $post->delete();
         
-
+        Cache::flush();
         return redirect()->route('admin.posts.index')->with('info','Post deleted');
     }
 }

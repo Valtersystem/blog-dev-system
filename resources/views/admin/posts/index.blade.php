@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dev Valtinho')
+@section('title', 'Dev System')
 
 @section('content_header')
     <a href="{{route('admin.posts.create')}}" class="btn btn-secondary btn-sm float-right">Crirar post</a>

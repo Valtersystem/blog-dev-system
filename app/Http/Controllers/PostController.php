@@ -7,13 +7,24 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
 {
     public function index(){
-        /* Usando o método paginate para limitar a quantidade de posts  */
-        /* latest('id') Mostra os posts na ordem decrescente. */
-        $posts = Post::where('status', 2)->latest('id')->paginate(8);
+
+        if(request()->page){
+            $key = 'posts' . request()->page;
+        }else{
+            $key = 'posts';
+        }
+
+        if (Cache::has($key)){
+            $posts = Cache::get( $key);
+        }else{
+            $posts = Post::where('status', 2)->latest('id')->paginate(8); 
+            Cache::put( $key, $posts);
+        }
 
         return view('posts.index', compact('posts'));
 
@@ -27,6 +38,12 @@ class PostController extends Controller
             ->take(4)
             ->get();
 
+            // $countSimilares = count($similares);
+
+            // if ($countSimilares === 0) {
+            //     $similares = 0;
+            //     return view('posts.show', compact('post', 'similares'));
+            // }
 
         return view('posts.show', compact('post', 'similares'));
     }

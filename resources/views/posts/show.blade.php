@@ -6,7 +6,7 @@
             {!!$post->extract!!}
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1  gap-6 {{ count($similares) ? 'lg:grid-cols-3' : 'lg:grid-cols-2' }}">
 
             {{-- Container principal --}}
             <div class="lg:col-span-2">
@@ -24,7 +24,7 @@
             </div>
 
             {{-- Container realacional  --}}
-            <aside>
+            <aside class="{{ count($similares) ? ' ' : 'hidden' }}">
                 <h1 class="text-2xl font-bold text-white mb-4">Sobre: {{$post->category->name}}</h1>
             
                 <ul>

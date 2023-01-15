@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dev Valtinho | Lista tags')
+@section('title', 'Dev System | Lista tags')
 
 @section('content_header')
 <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.tags.create')}}">Criar nova Tag</a>

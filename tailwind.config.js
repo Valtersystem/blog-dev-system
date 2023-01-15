@@ -15,6 +15,10 @@ module.exports = {
                 // sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                 sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
+            // colors: {
+            //     'blue': '#243c5a',
+            //     'red': '#243c5a',
+            //   },
         },
     },
 
@@ -22,5 +26,6 @@ module.exports = {
 
     corePlugins: {
         container: false,
+        color: false,
     }
 };

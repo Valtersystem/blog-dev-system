@@ -18,11 +18,11 @@ class PostObserver
 
   
     public function deleting(Post $post)
-    {
-        Cloudinary::destroy($post->image->url);
+    {   
+        $urlOld = $post->image->urlId;
 
         if ($post->image) {
-            Cloudinary::destroy($post->image->url);
+            Cloudinary::destroy($urlOld);
         }
     }
 

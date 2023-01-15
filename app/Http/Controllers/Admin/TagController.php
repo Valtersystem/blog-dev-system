@@ -30,11 +30,13 @@ class TagController extends Controller
         $colors = [
             'blue' => 'Blue',
             'red' => 'Red',
-            'yellow' => 'Yellow',
+            'bg-yellow-600' => 'Yellow',
             'green' => 'Green',
             'indigo' => 'Indigo',
             'purple' => 'Purple',
-            'pink' => 'Pink'
+            'pink' => 'Pink',
+            'orange' => 'Orange',
+            'sienna' => 'Sienna',
         ];
         return view('admin.tags.create', compact('colors'));
     }
@@ -78,13 +80,15 @@ class TagController extends Controller
     public function edit( Tag $tag)
     {   
         $colors = [
-            'red' => 'Red',
-            'yellow' => 'Yellow',
-            'green' => 'Green',
             'blue' => 'Blue',
+            'red' => 'Red',
+            'bg-yellow-600' => 'Yellow',
+            'green' => 'Green',
             'indigo' => 'Indigo',
             'purple' => 'Purple',
-            'pink' => 'Pink'
+            'pink' => 'Pink',
+            'orange' => 'Orange',
+            'sienna' => 'Sienna',
         ];
 
         return view('admin.tags.edit',compact('tag', 'colors'));
