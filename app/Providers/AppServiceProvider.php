@@ -17,13 +17,15 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-    /**
+    /**config/app.php
      * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
+        $url->forceSchema('https');
+        
         Schema::defaultStringLength(125);
     }
 }
