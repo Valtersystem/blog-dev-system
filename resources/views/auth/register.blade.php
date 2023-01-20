@@ -1,7 +1,7 @@
-@extends('adminlte::auth.register')
+{{-- @extends('adminlte::auth.register') --}}
 <!-- component -->
 
-{{-- <x-app-layout>
+ <x-app-layout>
     <!-- component -->
     <style>
       .emoji-404{
@@ -31,4 +31,4 @@
              <a href="{{url()->previous()}}" class="text-gray-500 font-mono text-xl bg-gray-200 p-3 rounded-md hover:shadow-md">Go back </a>
            </center>
         </div>
-</x-app-layout> --}}
+</x-app-layout>

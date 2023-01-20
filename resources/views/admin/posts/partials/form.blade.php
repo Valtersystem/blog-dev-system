@@ -87,7 +87,7 @@
 
 <div class="form-group">
     {!! Form::label('extract', 'Descrição:') !!}
-    {!! Form::textarea('extract', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('extract', null, ['class' => 'form-control ckeditor','id' => 'ckeditor']) !!}
 
     @error('extract')
         <small class="text-danger">{{$message}}</small>
@@ -96,7 +96,7 @@
 
 <div class="form-group">
     {!! Form::label('body', 'Post:') !!}
-    {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('body', null, ['class' => 'form-control ckeditor', 'id' => 'ckeditor']) !!}
 
     @error('body')
         <small class="text-danger">{{$message}}</small>
