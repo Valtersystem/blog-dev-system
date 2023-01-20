@@ -19,7 +19,9 @@ class PostObserver
   
     public function deleting(Post $post)
     {   
-        $urlOld = $post->image->urlId;
+        if($post->image->urlId){
+            $urlOld = $post->image->urlId;
+        }
 
         if ($post->image) {
             Cloudinary::destroy($urlOld);

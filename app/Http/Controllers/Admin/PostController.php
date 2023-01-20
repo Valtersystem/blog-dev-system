@@ -113,7 +113,9 @@ class PostController extends Controller
 
         if ($request->file('file')) {
 
-            $urlOld = $post->image->urlId;
+            if($post->image->urlId){
+                $urlOld = $post->image->urlId;
+            }
         
             $file = $request->file('file');
             $obj = Cloudinary::upload($file->getRealPath(),['folder' => 'posts']);
