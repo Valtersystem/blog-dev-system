@@ -113,7 +113,7 @@ class PostController extends Controller
 
         if ($request->file('file')) {
 
-            if($post->image->urlId){
+            if($post->image){
                 $urlOld = $post->image->urlId;
             }
         

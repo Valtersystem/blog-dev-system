@@ -19,7 +19,7 @@ class PostObserver
   
     public function deleting(Post $post)
     {   
-        if($post->image->urlId){
+        if($post->image){
             $urlOld = $post->image->urlId;
         }
 
