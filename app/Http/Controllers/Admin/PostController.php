@@ -122,7 +122,7 @@ class PostController extends Controller
             $url =  $obj->getSecurePath();
             $urlId =  $obj->getPublicId();
 
-            if($post->image->url){
+            if($post->image){
                 // delete the image
                 Cloudinary::destroy($urlOld);
                 // update the image url
