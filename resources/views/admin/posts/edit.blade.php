@@ -46,7 +46,8 @@
 
 @section('js')
         <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.js')}}"></script>
-        <script src="//cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+        {{-- <script src="//cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script> --}}
+        <script src="/ckeditor/ckeditor.js"></script>
 
         <script>
             $(document).ready( function() {
