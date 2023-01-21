@@ -43,3 +43,14 @@
 .sienna{
     background: rgba(160, 81, 45, 0.386);
 }
+
+
+.nav-event-active{
+    opacity: 0.10;
+    transition: 1s;
+    z-index: 99;
+}
+
+.nav-event-active:hover{
+    opacity: 1;
+}

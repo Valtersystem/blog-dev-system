@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-violet-900 via-black to-green-900" x-data='{ open:false }'>
+<nav id="nav-event" class="fixed w-full bg-gradient-to-r from-violet-900 via-violet-900 to-black" x-data='{ open:false }'>
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         
