@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container py-8">
         <div class=" my-16">
-            <h1 class="text-4xl font-bold text-white py-1">{{$post->name}}</h1>
+            <h1 class="text-4xl font-bold text-white py-1 mb-4">{{$post->name}}</h1>
 
             <div class="text-lg text-white mb-4">
                 {!!$post->extract!!}
@@ -28,7 +28,7 @@
             {{-- Container realacional  --}}
             <div class="relative">
                 <aside class="{{ count($similares) ? ' ' : 'hidden' }} fixed">
-                    <h1 class="text-2xl font-bold text-white mb-4">Sobre: {{$post->category->name}}</h1>
+                    <h1 class="text-2xl font-bold text-white mb-4">More: {{$post->category->name}}</h1>
                 
                     <ul>
                         @foreach ($similares as $similar)

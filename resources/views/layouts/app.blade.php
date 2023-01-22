@@ -23,16 +23,15 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-zinc-900 ">
-            @livewire('navigation')
+        @livewire('navigation')
+            <div class="min-h-screen bg-zinc-900 ">
             
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-
-            @livewire('footer')
-        </div>
+                <!-- Page Content -->
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
+        @livewire('footer')
 
         @stack('modals')
 
