@@ -1,4 +1,7 @@
 @props(['post'])
+
+
+
 <article class="mb-8 bg-white shadow-xl rounded-lg overflow-hidden">
 
    <div class="w-full h-80 bg-cover bg-center rounded-t-xl" style="background-image: url(@if($post->image) {{$post->image->url}}@else https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg @endif)">
