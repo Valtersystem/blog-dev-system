@@ -2,7 +2,7 @@
     <div class="container py-8">
         <div class=" my-16">
             <h1 class="text-4xl font-bold text-white py-1 mb-4">{{$post->name}}</h1>
-
+            <p class="text-white py-4">Post Date: {{$post->created_at->toFormattedDateString()}}</p>
             <div class="text-lg text-white mb-4">
                 {!!$post->extract!!}
             </div>

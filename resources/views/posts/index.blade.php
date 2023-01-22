@@ -21,6 +21,7 @@
                         {{$post->name}}
                     </a>
                 </h1>
+                <p class="text-white absolute mt-72">Post Date: {{$post->created_at->toFormattedDateString()}}</p>
             </div>
             
         </article>

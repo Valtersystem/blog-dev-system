@@ -28,4 +28,7 @@
            <a href="{{route('posts.tag', $tag)}}" class="inline-block {{$tag->color}} rounded-full px-3 py-1 text-sm text-gray-700 mr-2">{{$tag->name}}</a> 
         @endforeach
     </div>
+    <div class="flex flex-row-reverse p-4">
+        <p class="text-black">Post Date: {{$post->created_at->toFormattedDateString()}}</p>
+    </div>
 </article>

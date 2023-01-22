@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use PHPUnit\Framework\DataProviderTestSuite;
 
 class PostController extends Controller
 {
@@ -26,6 +28,7 @@ class PostController extends Controller
             Cache::put( $key, $posts);
         }
 
+    
         return view('posts.index', compact('posts'));
 
     }

@@ -1,4 +1,11 @@
 <?php return array (
+  'blade-ui-kit/blade-icons' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'BladeUI\\Icons\\BladeIconsServiceProvider',
+    ),
+  ),
   'cloudinary-labs/cloudinary-laravel' => 
   array (
     'providers' => 
