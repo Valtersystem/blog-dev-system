@@ -31,7 +31,7 @@ class TagController extends Controller
         $colors = [
             'blue' => 'Blue',
             'red' => 'Red',
-            'bg-yellow-600' => 'Yellow',
+            'yellow' => 'Yellow',
             'green' => 'Green',
             'indigo' => 'Indigo',
             'purple' => 'Purple',
