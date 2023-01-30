@@ -27,7 +27,7 @@
         </article> --}}
 
 
-        <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-full w-60 md:w-96">
+        <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-full w-60 md:w-96 flex flex-col">
            
                 @if ($post->image)
                 <img alt="blog photo" src="{{$post->image->url}}" class="object-cover w-full max-h-40"/>
@@ -35,11 +35,11 @@
                 <img alt="blog photo" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" class="object-cover w-full max-h-44"/>
                 @endif
 
-                <div class="w-full p-4 bg-white dark:bg-gray-800 h-full">
+                <div class="w-full p-4 bg-white dark:bg-gray-800 h-full flex flex-col justify-around">
                     <p class="font-medium text-indigo-500 text-md">
                         Post Date: {{$post->created_at->toFormattedDateString()}}
                     </p>
-                    <p class="mb-2 text-xl font-medium text-gray-800 dark:text-white h-full flex flex-col justify-around">
+                    <p class="mb-2 text-xl font-medium text-gray-800 dark:text-white">
                         <a href="{{route('posts.show', $post)}}">
                             {{$post->name}}
                         </a>
