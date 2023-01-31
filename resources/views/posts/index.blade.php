@@ -44,9 +44,9 @@
                             {{$post->name}}
                         </a>
                     </p>
-                    {{-- <p class="font-light text-gray-400 dark:text-gray-300 text-md">
+                    <p class="font-light text-gray-400 dark:text-gray-300 text-md">
                         {!!$post->extract!!}
-                    </p> --}}
+                    </p>
                     <div class="flex flex-wrap items-center mt-4 justify-starts gap-3">
                         @foreach ($post->tags as $tag)
                         <div class="text-xs mr-2 py-1.5 px-4 text-white {{$tag->color}} rounded-2xl">
