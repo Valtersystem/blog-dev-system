@@ -39,7 +39,7 @@
                     <p class="font-medium text-indigo-500 text-md">
                         Post Date: {{$post->created_at->toFormattedDateString()}}
                     </p>
-                    <p class="mb-2 text-xl font-medium text-gray-800 dark:text-white">
+                    <p class="mb-2 text-xl font-medium text-white">
                         <a href="{{route('posts.show', $post)}}">
                             {{$post->name}}
                         </a>
