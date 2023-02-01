@@ -37,19 +37,19 @@
 
                 <div class="w-full p-4 bg-gray-800 h-full flex flex-col justify-around">
                     <p class="font-medium text-indigo-500 text-md">
-                        Post Date: {{$post->created_at->toFormattedDateString()}}
+                        Post Date: {{$post->created_at->isoFormat('YYYY MM YY')}}
                     </p>
                     <p class="mb-2 text-xl font-medium text-white">
                         <a href="{{route('posts.show', $post)}}">
                             {{$post->name}}
                         </a>
                     </p>
-                    <p class="font-light text-gray-400 dark:text-gray-300 text-md">
+                    {{-- <p class="font-light text-gray-400 dark:text-gray-300 text-md">
                         {!!$post->extract!!}
-                    </p>
+                    </p> --}}
                     <div class="flex flex-wrap items-center mt-4 justify-starts gap-3">
                         @foreach ($post->tags as $tag)
-                        <div class="text-xs mr-2 py-1.5 px-4 text-white {{$tag->color}} rounded-2xl">
+                        <div class="whitespace-nowrap rounded-full {{$tag->color}} px-2.5 py-0.5 text-xs text-white">
                             <a href="{{route('posts.tag', $tag)}}">
                                 {{$tag->name}}
                             </a>
