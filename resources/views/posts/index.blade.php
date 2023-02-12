@@ -27,7 +27,7 @@
         </article> --}}
 
 
-        <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-full w-11/12 md:w-96 flex flex-col">
+        <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-full w-11/12  flex flex-col">
            
                 @if ($post->image)
                 <img alt="blog photo" src="{{$post->image->url}}" class="object-cover w-full max-h-44"/>
