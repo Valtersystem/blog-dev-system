@@ -1,5 +1,5 @@
 <x-app-layout> 
-    <div class="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8 py-8 text-white">
+    <div class="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8 py-8 pt-16 text-white">
         
         <h1 class=" uppercase text-center text-3xl font-bold mb-8 mt-16">Category: {{$category->name}}</h1>
 
