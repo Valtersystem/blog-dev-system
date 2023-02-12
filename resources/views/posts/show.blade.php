@@ -27,7 +27,7 @@
 
             {{-- Container realacional  --}}
             <div class="relative">
-                <aside class="{{ count($similares) ? ' ' : 'hidden' }} fixed">
+                <aside class="{{ count($similares) ? ' ' : 'hidden' }}">
                     <h1 class="text-2xl font-bold text-white mb-4">More: {{$post->category->name}}</h1>
                 
                     <ul>

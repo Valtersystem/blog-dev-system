@@ -36,8 +36,8 @@
                 @endif
 
                 <div class="w-full p-4 bg-gray-800 h-full flex flex-col justify-around">
-                    <p class="font-medium text-indigo-500 text-md">
-                        Post Date: {{$post->created_at->isoFormat('YYYY MM YY')}}
+                    <p class="font-medium text-indigo-500 text-xs font-bold">
+                        POST DATE: {{$post->created_at->isoFormat('YYYY-MM-YY')}}
                     </p>
                     <p class="mb-2 text-xl font-medium text-white">
                         <a href="{{route('posts.show', $post)}}">

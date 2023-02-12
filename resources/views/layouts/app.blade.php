@@ -20,7 +20,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" id="style-scroll">
         <x-jet-banner />
 
         @livewire('navigation')
